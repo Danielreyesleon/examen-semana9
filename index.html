@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestor de Tareas – Examen Semana 9</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>📝 Gestor de Tareas</h1>
+    <p class="subtitle">Examen Semana 9 – Daniel Reyes León</p>
+  </header>
+
+  <main>
+    <!-- Form to add a new task -->
+    <section class="form-section">
+      <h2>Agregar nueva tarea</h2>
+      <form id="task-form">
+        <div class="form-group">
+          <label for="task-title">Título</label>
+          <input
+            type="text"
+            id="task-title"
+            placeholder="Título de la tarea"
+            required
+            maxlength="100"
+          />
+        </div>
+        <div class="form-group">
+          <label for="task-description">Descripción</label>
+          <textarea
+            id="task-description"
+            placeholder="Descripción (opcional)"
+            rows="3"
+            maxlength="300"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="task-priority">Prioridad</label>
+          <select id="task-priority">
+            <option value="alta">Alta</option>
+            <option value="media" selected>Media</option>
+            <option value="baja">Baja</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar tarea</button>
+      </form>
+    </section>
+
+    <!-- Filter controls -->
+    <section class="filter-section">
+      <h2>Mis tareas <span id="task-count" class="badge">0</span></h2>
+      <div class="filters">
+        <button class="btn btn-filter active" data-filter="all">Todas</button>
+        <button class="btn btn-filter" data-filter="pendiente">Pendientes</button>
+        <button class="btn btn-filter" data-filter="completada">Completadas</button>
+      </div>
+    </section>
+
+    <!-- Task list -->
+    <section class="tasks-section">
+      <ul id="task-list" aria-label="Lista de tareas"></ul>
+      <p id="empty-message" class="empty-message" hidden>No hay tareas para mostrar.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Desarrollado por Daniel Reyes León · UFIDE · 2026</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
